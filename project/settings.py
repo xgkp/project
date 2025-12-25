@@ -81,6 +81,10 @@ DATABASES = {
         'PASSWORD': 'C2Q-n7k98..^',
         'HOST': 'localhost',
         'PORT': '3306',
+        # 'OPTIONS': {
+            # 'ssl': True,  # 如果需要SSL连接
+            # 'auth_plugin': 'caching_sha2_password'  # 显式指定认证方式
+        # }
     }
 }
 
