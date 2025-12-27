@@ -46,5 +46,7 @@ urlpatterns = [
     # path可传//
     path('book/path/<path:book_id>',views.get_book_query_path,name='book_path'),
 
-    path('movie/', include("movie.urls"))
+    path('movie/', include("movie.urls")),
+
+    path('home/',include('home.urls')),
 ]
