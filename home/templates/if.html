@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if标签</title>
+</head>
+<body>
+    {% if age < 18 %}
+    <p style="color: red;background-color: beige;">年龄小于18 不满足要求</p>
+    {% elif  age == 18 %}
+    <p style="color: black; background-color: aqua;">年龄等于18 再等等</p>
+    {% else %}
+    <p style="color: black; background-color: green;">年龄大于18 可以了</p>
+    {% endif %}
+</body>
+</html>

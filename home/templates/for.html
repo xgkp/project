@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>序号</td>
+                <td>书名</td>
+                <td>作者</td>
+            </tr>
+        </thead>
+    <tbody>
+    {% for book in books %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ book.bookname }}</td>
+        <td>{{ book.author }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+
+    <div>
+        {% for key,value in person.items %}
+        {{key}}:{{value}}
+        {% endfor %}
+    </div>
+
+     <table>
+        <thead>
+            <tr>
+                <td>序号</td>
+                <td>书名</td>
+                <td>作者</td>
+            </tr>
+        </thead>
+    <tbody>
+    {% for book in books reversed %}
+    <tr>
+        <td>{{ forloop.counter0 }}</td>
+        <td>{{ book.bookname }}</td>
+        <td>{{ book.author }}</td>
+    </tr>
+    {% endfor %}
+
+
+    <table>
+        <thead>
+            <tr>
+                <td>序号</td>
+                <td>书名</td>
+                <td>作者</td>
+            </tr>
+        </thead>
+    <tbody>
+    {% for book in books2 reversed %}
+    <tr>
+        <td>{{ forloop.counter0 }}</td>
+        <td>{{ book.bookname }}</td>
+        <td>{{ book.author }}</td>
+    </tr>
+    {% empty %}
+    <tr>没有任何图书.</tr>
+    {% endfor %}
+
+    </tbody>
+    </table>
+
+</body>
+</html>

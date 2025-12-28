@@ -24,7 +24,34 @@ def info(request):
         ],
         "person":Person("真实姓名:")
         }
-    
     return render(request=request,template_name='info.html',context=context)
+    
+def ifview(request, age):
+    print(age)
+    return render(request=request,template_name='if.html',context={'age':age})
+
+def forview(request):
+    books = [
+            {"bookname":"shuihuzhuan","author":"施耐庵"},
+            {"bookname":"xiyouji","author":"wuchengen"}
+        ]
+    books2 = []
+    context = {
+        "books":books,
+        "person":{
+            "name":"zhangsan",
+            "age":18,
+            "height":180
+        },
+        "books2":books2
+        }
+    # list
+    # items,keys,values
+    return render(request=request,template_name='for.html',context=context)
+
+
+
+
+    
     
     
