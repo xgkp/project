@@ -10,4 +10,5 @@ urlpatterns = [
     path('for',views.forview,name='for_view'),
     path('with',views.withview,name='with_view'),
     path('url',views.urlview,name='url_view'),
+    path('filter',views.filterview,name='filter_view'),
 ]

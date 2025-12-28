@@ -1,3 +1,4 @@
+from datetime import datetime, timedelta
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -63,6 +64,23 @@ def withview(request):
     
 def urlview(request):
     return render(request=request,template_name='url.html')
+
+def filterview(request):
+    context = {
+        'msg':'  hello Django template filter  ',
+        'date': datetime.now(),
+        'date2': datetime.now() + timedelta(days=5),
+        'profile':'wo jiu shi wo bu yi yang de yan huo',
+        'profile1':'',
+        'list':[1,2,3,4,5],
+        'num':69.34567,
+        'safe':'<h1>我是安全的html代码</h1>',
+        'stringtags':'<strong>hello world django template filter</strong>',
+        'truncate':'Django模板语言提供了丰富的过滤器，可以对变量进行各种处理，比如字符串的截断、大小写转换、日期格式化等。',
+        'truncate_html':'Django模板语言提供了<b>丰富的过滤器</b>，可以对变量进行各种处理，比如字符串的截断、大小写转换、日期格式化等。',
+        }
+    return render(request=request,template_name='filter.html',context=context)
+    
     
 
 

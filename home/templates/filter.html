@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter</title>
+</head>
+<body>
+    <p>原始数据: {{ msg }}</p>
+    <p>首字母大写: {{ msg|capfirst }}</p>
+    <p>全部大写: {{ msg|upper }}</p>
+    <p>全部小写: {{ msg|lower }}</p>
+    <p>长度: {{ msg|length }}</p>
+    <p>去掉所有空格: {{ msg|cut:" " }}</p>
+
+    <p>原始日期数据: {{ date }}</p>
+    <p>处理日期数据: {{ date | date:"Y-m-d" }}</p>
+    <p>原始日期数据: {{ date2 }}</p>
+    <p>处理日期数据月日前不带0: {{ date2 | date:"Y-n-j" }}</p>
+
+
+    <p>default使用: {{ profile }}</p>
+    <p>default使用: {{ profile1 }}</p>
+    <p>default使用: {{ profile1 | default:"这个人很懒 什么都没留下" }}</p>
+
+
+    <p>default if none使用: {{ profile2 }}</p>
+    <p>default if none使用: {{ profile2 | default_if_none:"nothing" }}</p>
+
+    <p>列表数据: {{ list }}</p>
+    <p>列表数据第一个: {{ list | first }}</p>
+    <p>列表数据最后一个: {{ list | last }}</p>
+    <p>length使用: 列表长度是 {{ list | length }}</p>
+    <p>slice使用: {{ list | slice:"1:4" }}</p>
+    <p>slice使用: {{ list | slice:":3" }}</p>
+    <p>slice使用: {{ list | slice:"3:" }}</p>
+
+    <p>列表数据随机一个: {{ list | random }}</p>
+    <p>join使用: {{ list | join:"-"}} </p>
+    
+    <p>数字数据: {{ num }}</p>
+    <p>数字数据保留两位小数: {{ num | floatformat:2 }}</p>
+    <p>数字数据保留无小数: {{ num | floatformat:0 }}</p>
+
+    <p>安全过滤器使用前: {{ safe }}</p>
+    <p>安全过滤器使用后: {{ safe | safe }}</p>
+
+    <p>string filter使用前: {{ stringtags }}</p>
+    <p>string filter使用后: {{ stringtags | striptags }}</p>
+
+    <p>truncatechars使用前: {{ truncate }}</p>
+    <p>truncatechars使用后只展示10位其余都是...: {{ truncate | truncatechars:10 }}</p
+
+ 
+
+</body>
+</html>
