@@ -49,6 +49,21 @@ def forview(request):
     # items,keys,values
     return render(request=request,template_name='for.html',context=context)
 
+def withview(request):
+    books = [
+            {"bookname":"shuihuzhuan","author":"施耐庵"},
+            {"bookname":"xiyouji","author":"wuchengen"}
+    ]
+    context = {
+        "books":books
+    }
+    # {% with bk1=books.1 %}
+    # {% with books.1 as bk1 %}
+    return render(request=request,template_name='with.html',context=context)
+    
+def urlview(request):
+    return render(request=request,template_name='url.html')
+    
 
 
 

@@ -8,4 +8,6 @@ urlpatterns = [
     path('info',views.info,name='home_info'),
     path('if/<int:age>',views.ifview,name='if_view'),
     path('for',views.forview,name='for_view'),
+    path('with',views.withview,name='with_view'),
+    path('url',views.urlview,name='url_view'),
 ]

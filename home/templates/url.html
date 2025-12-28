@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>url标签</title>
+</head>
+<body>
+    <a href="{% url 'home:if_view' 17 %}">17 </a>
+    <br>
+    <a href="{% url 'home:if_view' age=18 %}">18 </a>
+    <br>
+    <a href="{% url 'book_query_str' %}?id=1&name=mingcheng">book  </a> 
+</body>
+</html>
