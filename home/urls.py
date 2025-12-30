@@ -11,4 +11,6 @@ urlpatterns = [
     path('with',views.withview,name='with_view'),
     path('url',views.urlview,name='url_view'),
     path('filter',views.filterview,name='filter_view'),
+    path('xfzindex',views.xfzindex,name='xfz_index'),
+    path('xfzindex2',views.xfzindex2,name='xfz_index2'),
 ]

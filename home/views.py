@@ -81,10 +81,17 @@ def filterview(request):
         }
     return render(request=request,template_name='filter.html',context=context)
     
+def xfzindex(request):  
+    articles = [
+        {"title":"文章1","content":"这是文章1的内容"},
+        {"title":"文章2","content":"这是文章2的内容"},
+        {"title":"文章3","content":"这是文章3的内容"},
+    ]
+    return render(request=request,template_name='xfz_index.html',context={"articles":articles})
+
+def xfzindex2(request):
+    return render(request=request,template_name='xfz_index2.html')
     
-
-
-
     
     
     

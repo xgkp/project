@@ -1,0 +1,32 @@
+{% extends "xfz_base.html" %}
+
+{%block title %} 首页 {% endblock %}
+
+{% block head %}
+{#  <link rel="stylesheet" href="/static/css/xfz_index2.css">  #}
+<style>
+    body {
+        background-color: #d41aa0ff;
+        font-family: Arial, sans-serif;
+    }
+    h2 {
+        color: #0a0a3aff;
+    }
+    </style>
+{% endblock %}
+
+{% block content %}
+<h2>这是小饭桌的首页2</h2>
+<p>欢迎来到小饭桌，这是首页的第二个版本。</p>
+{% include "xfz_article.html" %}
+{% endblock %}  
+
+{% block contentsuper %}
+    {{ block.super }}
+    <p>这是首页2中特有的扩展内容3333333。</p>
+{% endblock %}
+
+{% block contentfugai %}
+    <p>这是首页2中特有的覆盖内容。覆盖掉其他内容</p>
+{% endblock %}
+

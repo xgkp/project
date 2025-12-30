@@ -1,0 +1,10 @@
+<div>
+<h2>文章列表</h2>
+<ul>
+    {% for article in articles %}
+        <li>
+            <h3>{{ article.title }}</h3>
+            <p>{{ article.content }}</p>
+        </li>
+    {% endfor %}
+</div>

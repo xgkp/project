@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title %}
+    {% endblock %}-小饭桌</title>
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+<header>
+    <h1>欢迎来到小饭桌</h1>
+    <ul>
+        <a href="/">首页</a> 
+        <a href="/home/xfzindex">小饭桌首页</a> 
+        <a href="/home/xfzindex2">小饭桌新首页</a> 
+        <a href="/admin/">后台管理</a>
+        <a href="{% url 'home:if_view' 17 %}">18岁</a>
+
+        <ul>
+</header>
+<main>
+    {% block content %}
+        这里是主体内容,测试父模板
+    {% endblock %}
+
+    {% block contentsuper %}
+        这里是主体内容的扩展部分11111
+        这里是主体内容扩展部分22222
+    {% endblock %}
+
+        {% block contentfugai %}
+        将要被覆盖内容11111
+        将要被覆盖内容22222
+        {% endblock %}
+</main>
+<footer>
+    <p>版权所有 &copy; 2024 小饭桌</p>
+</footer>
+
+</body>
+</html>
