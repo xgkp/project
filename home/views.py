@@ -91,6 +91,10 @@ def xfzindex(request):
 
 def xfzindex2(request):
     return render(request=request,template_name='xfz_index2.html')
+
+def staticview(request):
+    return render(request=request,template_name='static.html')
+    
     
     
     

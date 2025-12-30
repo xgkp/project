@@ -13,4 +13,5 @@ urlpatterns = [
     path('filter',views.filterview,name='filter_view'),
     path('xfzindex',views.xfzindex,name='xfz_index'),
     path('xfzindex2',views.xfzindex2,name='xfz_index2'),
+    path('sta',views.staticview,name='static_view'),
 ]
