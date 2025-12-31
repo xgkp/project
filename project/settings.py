@@ -75,6 +75,7 @@ TEMPLATES = [
             "builtins": [
                 "django.templatetags.static",  # 添加这一行以启用静态文件模板标签
             ],
+            
         },
     },
 ]
