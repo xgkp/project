@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path, include, reverse
 from django.shortcuts import HttpResponse
 from book import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 # def index(request):
 #     return HttpResponse("welcome to first project");
@@ -49,4 +51,4 @@ urlpatterns = [
     path('movie/', include("movie.urls")),
 
     path('home/',include('home.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

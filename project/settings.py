@@ -72,6 +72,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            "builtins": [
+                "django.templatetags.static",  # 添加这一行以启用静态文件模板标签
+            ],
         },
     },
 ]
@@ -141,3 +144,11 @@ STATICFILES_DIRS = [staticfiles_dir]
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# media相关配置 文件存在哪个路径下
+MEDIA_ROOT = BASE_DIR / "media"
+# 通过哪个路径访问media下的文件http://127.0.0.1:8000/media1/info.png 故意多写个1,测试效果
+MEDIA_URL = '/media1/'
+
+
+
