@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bd</title>
+    <title>newbooks</title>
 </head>
 <body>
-    <table>
+    
+        <table>
         <thead>
             <tr>
                 <td>序号</td>
@@ -17,10 +18,15 @@
     <tbody>
     {% for book in books %}
     <tr>
-        <td>{{ book.id }}</td>
-        <td>{{ book.name }}</td>
-        <td>{{ book.author }}</td>
+        <td>{{ book.0 }}</td>
+        <td>{{ book.1 }}</td>
+        <td>{{ book.2 }}</td>
     </tr>
     {% endfor %}
+
+    
+    </tbody>
+    </table>
+
 </body>
 </html>

@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'newbook',
+    'book',
+    'movie',
 ]
 
 MIDDLEWARE = [
@@ -75,7 +78,7 @@ TEMPLATES = [
             "builtins": [
                 "django.templatetags.static",  # 添加这一行以启用静态文件模板标签
             ],
-            
+
         },
     },
 ]
@@ -89,7 +92,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # 或 'postgresql'
-        'NAME': 'mysql',
+        'NAME': 'datebase_demo',
         'USER': 'root',
         'PASSWORD': 'C2Q-n7k98..^',
         'HOST': 'localhost',
