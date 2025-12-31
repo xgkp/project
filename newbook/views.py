@@ -6,15 +6,14 @@ def newbook(request):
     # 获取游标对象
     cursor = connection.cursor()
     # 执行SQL语句
-    cursor.execute("SELECT * FROM book")
+    cursor.execute("SELECT * FROM book_back")
     # 获取所有数据
     books = cursor.fetchall()
-    one = cursor.fetchone()
-    print('one:', one)
+
+    # one = cursor.fetchone()
 
     context = {
         'books': books,
-         'one':one,
     }
     print(books)
     for book in books:
