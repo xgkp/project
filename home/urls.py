@@ -1,7 +1,6 @@
 from django.urls import path
 from . import views 
-from django.conf.urls.static import static
-from django.conf import settings
+
 app_name = 'home'
 
 urlpatterns = [
@@ -16,4 +15,4 @@ urlpatterns = [
     path('xfzindex',views.xfzindex,name='xfz_index'),
     path('xfzindex2',views.xfzindex2,name='xfz_index2'),
     path('sta',views.staticview,name='static_view'),
-]
+] 
