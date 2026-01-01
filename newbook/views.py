@@ -71,7 +71,7 @@ def delete(request):
     return HttpResponse(f"删除新书成功：{book.name}")
 
 def tag(request):
-    tag = Tag(name='历史')
+    tag = Tag(name='人文')
     tag.save()
     return HttpResponse(f"添加标签成功：{tag.name}")
     
