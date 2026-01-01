@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 class NewBook(models.Model):
     name = models.CharField(max_length=100)
@@ -21,11 +22,12 @@ class NewBook(models.Model):
     # other14 = models.BooleanField(default=True)  # 布尔字段，存储True/False值
     # other15 = models.IntegerField(default=0)  # 整数字段，存储整数值
     # other16 = models.FloatField(default=0.0)  # 浮点数字段，存储浮点数值
-    # other17 = models.TextField()  # 文本字段，存储大段文本内容
+    # other17 = models.TextField()  # 文本字段，存储大段文本内容 字符串类型的默认null=false尽量不要动,blank=true可以设置,设置完之后,前端表单可以不填
     # other18 = models.CharField(max_length=255)  # 字符字段，存储短文本内容
     # other19 = models.SmallIntegerField(default=0)  # 小整数字段，存储较小范围的整数值
     # other20 = models.PositiveIntegerField(default=0)  # 正整数字段，存储非负整数值
     # other21 = models.PositiveSmallIntegerField(default=0)  # 正小整数字段，存储非负小范围整数值
+
 
 class Author(models.Model):
     is_active = models.BooleanField(default=True)
@@ -36,5 +38,14 @@ class Author(models.Model):
     website = models.URLField()
     age = models.IntegerField(default=0)
     email = models.EmailField()
+    class Meta:
+        db_table = 'newbook_author'  # 自定义表名
+        ordering = ['-datejoined']  # 默认排序方式
+
+class Tag(models.Model):
+    name = models.CharField(max_length=50,db_column='tag_name',unique=True)
+    created_at = models.DateTimeField(default=datetime.now)
+    updated_at = models.DateTimeField(auto_now=True)
+    creater = models.CharField(max_length=200,default='')
 
  

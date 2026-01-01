@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.db import connection
-from .models import NewBook
+from .models import NewBook,Tag
 # Create your views here.
 
 def newbook(request):
@@ -69,5 +69,10 @@ def delete(request):
     book = NewBook.objects.get(price=99.9)
     book.delete()
     return HttpResponse(f"删除新书成功：{book.name}")
+
+def tag(request):
+    tag = Tag(name='历史')
+    tag.save()
+    return HttpResponse(f"添加标签成功：{tag.name}")
     
     

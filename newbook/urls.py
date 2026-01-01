@@ -12,4 +12,5 @@ urlpatterns = [
    path('order',views.order,name='order_newbook'),
    path('update',views.update,name='update_newbook'),
    path('delete',views.delete,name='delete_newbook'),
+   path('tag',views.tag,name='tag_newbook'),
 ] 

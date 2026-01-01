@@ -133,7 +133,8 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
+# 中国时间,非国际时间
 
 
 # Static files (CSS, JavaScript, Images)
@@ -148,6 +149,7 @@ STATICFILES_DIRS = [staticfiles_dir]
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# 默认的自增长主键字段类型
 
 # media相关配置 文件存在哪个路径下
 MEDIA_ROOT = BASE_DIR / "media"
