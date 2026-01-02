@@ -26,4 +26,15 @@ class Comment(models.Model):
     content = models.TextField()
     origin_comment = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE)
 
+
+
+class Usr3(models.Model):
+    name = models.CharField(max_length=100)
+    password = models.CharField(max_length=100)
+
+class Usr3Extend(models.Model):
+    nickname = models.TextField()
+    email = models.EmailField()
+    user = models.OneToOneField(Usr3, on_delete=models.CASCADE)
+
     
