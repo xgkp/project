@@ -37,4 +37,14 @@ class Usr3Extend(models.Model):
     email = models.EmailField()
     user = models.OneToOneField(Usr3, on_delete=models.CASCADE)
 
+
+class Art4(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+
+class Tag4(models.Model):
+    name = models.CharField(max_length=50)
+    articles = models.ManyToManyField(Art4,related_name="articles")  # 多对多关系
+    # 标签跟文章是多对多的关系
+
     
