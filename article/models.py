@@ -11,7 +11,9 @@ class Article(models.Model):
     content = models.TextField()
     # 外键,级别联删除
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-   
 
+class Comment(models.Model):
+    content = models.TextField()
+    origin_comment = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE)
 
     
