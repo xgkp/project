@@ -37,5 +37,12 @@ def detaila2(request):
         print(f"文章标题: {article.title} 作者: {article.author.name}")
     # 在这里能用articles因为在Art2的author属性foreignkey里的related_name='articles'
     return HttpResponse(f"success")
-    
+
+def query1exact(request):
+    article = Art2.objects.filter(title__exact='第一篇文章')
+    print(str(article.query))
+    for article in article: 
+        print(f"文章标题: {article.title} 作者: {article.author.name}")
+    return HttpResponse(f"success")
+    # 我这里需要print(str(article.query))
     

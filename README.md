@@ -13,3 +13,11 @@ python3 manage.py startapp appname
 python3 manage.py makemigrations
 数据库建表
 python3 manage.py migrate
+
+
+数据库:
+filter   查询到符合条件的数据
+exclude  排除掉符合条件的
+get 只获取一条数据
+1、exact 精准查询 
+2、ieact 忽略大小写
