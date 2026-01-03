@@ -52,5 +52,6 @@ SET FOREIGN_KEY_CHECKS = 1;  -- 恢复外键约束
 26、aggregate 仅有字段 和  annotate 可以新增字段,类似group by  appname=front annotate
 27、F表达式批量减少或增加某个值 比如表中price 都加1 ,或者匹配两个字段值一样
 28、Q表达式就是或的关系Q(1) | Q2 ,filter是且的关系
+35/63 = 202501032347
 
 
