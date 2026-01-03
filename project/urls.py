@@ -55,5 +55,7 @@ urlpatterns = [
     path('newbook/',include('newbook.urls')),
 
     path('article/',include('article.urls')),
+
+    path('front/',include('front.urls')),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

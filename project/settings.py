@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'book',
     'movie',
     'article',
+    'front',
 ]
 
 MIDDLEWARE = [

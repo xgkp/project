@@ -48,5 +48,7 @@ TRUNCATE TABLE article_tag4_articles;
 TRUNCATE TABLE article_tag4;
 TRUNCATE TABLE article_art4;
 SET FOREIGN_KEY_CHECKS = 1;  -- 恢复外键约束
+25、聚合函数 AVG views 中 from django.db.models import Avg, Count, F, Q MAX MIN  
+26、aggregate 仅有字段 和  annotate 可以新增字段,类似group by  appname=front annotate
 
 
