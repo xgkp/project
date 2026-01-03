@@ -9,6 +9,7 @@ class User(models.Model):
 class Article(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
+    published_at = models.DateTimeField(auto_now_add=True,null=True)
     # 外键,级别联删除
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -44,7 +45,8 @@ class Art4(models.Model):
 
 class Tag4(models.Model):
     name = models.CharField(max_length=50)
-    articles = models.ManyToManyField(Art4,related_name="articles")  # 多对多关系
+    articles = models.ManyToManyField(to='Art4',related_name="articles")  # 多对多关系
     # 标签跟文章是多对多的关系
+    # 这里课程里面的articles应该改为tags更合适
 
     
