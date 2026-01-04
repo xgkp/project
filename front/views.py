@@ -1,6 +1,8 @@
 from django.shortcuts import render,HttpResponse
 from .models import book,bookoder
 from django.db.models import Avg, Count, F, Q,Sum,Max,Min
+from .forms import MessageForm
+from django.views.decorators.http import require_http_methods
 
 # Create your views here.
 
@@ -68,6 +70,20 @@ def qtype(request):
         print(f"书名: {b.title}, 作者: {b.author}, 价格: {b.price}")
     return HttpResponse("Q类型复杂查询成功")
 
+@require_http_methods(["GET", "POST"])
+def form(request):
+    if request.method == 'GET':
+        form = MessageForm()
+        return render(request, 'form.html', {'form': form})
+    elif request.method == 'POST':
+        form = MessageForm(request.POST)
+        if form.is_valid():
+            title = form.cleaned_data['title']
+            content = form.cleaned_data['content']
+            return HttpResponse(f"表单提交成功! 标题: {title}, 内容: {content}")
+        else:
+            return render(request, 'form.html', {'form': form})
+    
     
     
     

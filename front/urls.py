@@ -11,4 +11,5 @@ urlpatterns = [
     path('ft/', views.ftype, name='f_type_example'),
     path('ft2/', views.ftype2, name='f_type_example_2'),
     path('qt/', views.qtype, name='q_type_example'),
+    path('fm/', views.form, name='message_form'),
 ]
