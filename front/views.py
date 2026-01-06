@@ -1,7 +1,7 @@
 from django.shortcuts import render,HttpResponse
 from .models import book,bookoder
 from django.db.models import Avg, Count, F, Q,Sum,Max,Min
-from .forms import MessageForm
+from .forms import MessageForm,RegisterForm
 from django.views.decorators.http import require_http_methods
 
 # Create your views here.
@@ -83,7 +83,27 @@ def form(request):
             return HttpResponse(f"表单提交成功! 标题: {title}, 内容: {content}")
         else:
             return render(request, 'form.html', {'form': form})
-    
+
+@require_http_methods(["GET", "POST"])  
+def register(request):
+    if request.method == 'GET':
+        form = RegisterForm()
+        return render(request, 'register.html', {'form': form})
+    elif request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            telphone = form.cleaned_data['telphone']
+            print("手机号验证通过:", telphone)
+            return HttpResponse(f"表单提交成功! 手机号: {telphone}")
+        else:
+            print("手机号验证失败:{form.errors}")
+            print(form.errors.get_json_data())
+            context = {
+                'form': form,
+                'errors': form.errors
+                }
+            
+            return render(request, 'register.html', context=context)
     
     
     

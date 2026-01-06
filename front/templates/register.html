@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register index </title>
+</head>
+<body>
+    <h1>注册页面</h1>
+    {#  {{ form }}  #}
+    {#  <form action="" method="post"  novalidate = "true">  #}
+
+   {#  {{ errors }}  #}
+
+    <form action="" method="post" >
+        {% csrf_token %}
+        {{ errors }}
+        <div>
+            <input type="text" name="telphone" placeholder="请输入手机号"/>
+        </div>
+
+        <div>
+            <input type="text" name="pwd1" placeholder="请输入密码"/>
+        </div>
+
+        <div>
+            <input type="text" name="pwd2" placeholder="请输入密码"/>
+        </div>
+
+        <input type="submit" value="提交"></input>
+    </form>
+</body>
+</html>

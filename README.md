@@ -54,4 +54,19 @@ SET FOREIGN_KEY_CHECKS = 1;  -- 恢复外键约束
 28、Q表达式就是或的关系Q(1) | Q2 ,filter是且的关系
 35/63 = 202501032347
 
+表单:django.forms.Form
+渲染
+验证合法性
+from django import forms
+from .forms import MessageForm
+
+
+
+
+from django.views.decorators.http import require_http_methods 
+请求装饰器,只允许GET和POST
+@require_http_methods(["GET", "POST"])
+
+
+
 

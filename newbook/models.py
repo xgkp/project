@@ -38,6 +38,7 @@ class Author(models.Model):
     website = models.URLField()
     age = models.IntegerField(default=0)
     email = models.EmailField()
+    telphone = models.CharField(max_length=15, unique=True,default='')
     class Meta:
         db_table = 'newbook_author'  # 自定义表名
         ordering = ['-datejoined']  # 默认排序方式
